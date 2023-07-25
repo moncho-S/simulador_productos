@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}
+MENU
+{% endblock title %}
+{% block body %}
+<h2 style="text-align:center" class='my-3'> SIMULADOR PARA FABRICACIÓN DE PRODUCTOS FARMACÉUTICOS </h2> 
+<div class="card text-center mx-auto " style="width: 25rem;">
+    {% load static %}
+    <img src="{% static 'imgs/farma.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"><b>Bienvenido al registro de productos</b></h5>
+      <p class="card-text">Acciones <b>CRUD</b>:<br>
+                      <b>Create</b>: Insertar producto<br>
+                      <b>Read</b>: Mostrar los productos<br>
+                        <b>Update</b>: Actualizar los productos<br>
+                        <b>Delete</b>: Borrar los productos</p>
+      <div><a href={% url 'insertar-lab' %} class="btn btn-primary my-1" style="background-color: #c76fd5;border-color:#c76fd5">Create (Insertar)</a></div>
+        <div><a href={% url 'mostrar-lab' %} class="btn btn-primary my-1" style="background-color: #c76fd5;border-color:#c76fd5">Read (Mostrar)</a></div>
+    </div>
+  </div>
+{% endblock body %}

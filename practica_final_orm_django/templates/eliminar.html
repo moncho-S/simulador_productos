@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}
+ELIMINAR
+{% endblock title %}
+
+{% block body %}
+<form action="" method="POST"> 
+    {% csrf_token %} 
+    <br><br> 
+    <div class="row">
+        <div class="col-sm-6 mx-auto" style='width:40%'>
+          <div class="card" style='border:0px'>
+            <div class="card-body">
+              <h5 class="card-title fs-2">Confirmación de eliminación</h5>
+              <p class="card-text fs-5">Esta seguro de eliminar el laboratorio <b> "{{ laboratorio.nombre}} "</b></p>
+              <input class="btn btn-danger" type="submit" value="Eliminar">
+              <a href="{% url 'mostrar-lab' %}"  class="btn btn-success">Cancelar</a>
+        </div>
+          </div>
+        </div>
+      </div>
+</form>
+
+{% endblock body %}

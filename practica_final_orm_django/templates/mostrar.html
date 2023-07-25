@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+MOSTRAR
+{% endblock title %}
+{% block body %}
+<h2 style="text-align:center" class='my-3'> Información de Laboratorios </h2> 
+<table class='table table-striped'> 
+    <thead> 
+        <tr> 
+            <th>Nombre</th> 
+            <th>Ciudad</th> 
+            <th>Pais</th> 
+            <th>Editar</th>
+            <th>Eliminar</th> 
+        </tr> 
+    </thead> 
+    <tbody> 
+        {% for laboratorio in laboratorios %} 
+        <tr> 
+            <td>{{laboratorio.nombre}}</td> 
+            <td>{{laboratorio.ciudad}}</td> 
+            <td>{{laboratorio.pais}}</td> 
+            <td><a href="../editar/{{laboratorio.id}}">Actualizar</a></td> 
+            <td> <a href="../eliminar/{{laboratorio.id}}">Eliminar</a> </td>
+        </tr> 
+        {% endfor %} 
+    </tbody> 
+</table> 
+<br><br> 
+<p>
+    <a href="{% url 'inicio' %}" class="btn btn-primary" style="background-color: #c76fd5;border-color:#c76fd5"><-- Ir a la pagina de Inicio</a> 
+</p>
+<p>Usted ha visitado esta página {{ num_visits }} veces.</p>
+
+{% endblock body %}

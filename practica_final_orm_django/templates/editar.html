@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+    EDITAR
+{% endblock title %}
+
+{% block body %}
+<h2 class="my-4" style="text-align:center"> Actualizar los detalles del Laboratorio</h2> 
+<form action="../actualizar/{{ laboratorio.id }}"method="POST"> 
+
+    {% csrf_token %} 
+    <div class="input-group mb-3 mx-auto" style='width:33%'>
+        <span class="input-group-text" id="inputGroup-sizing-default" style='width:40%'>Nombre del laboratorio</span>
+        <input type="text" value="{{laboratorio.nombre}}" class="form-control" aria-label="Sizing example input" style='width:60%' aria-describedby="inputGroup-sizing-default" name="lab_nombre">
+      </div>
+      <div class="input-group mb-3 mx-auto" style='width:33%'>
+        <span class="input-group-text" id="inputGroup-sizing-default" style='width:40%'>Ciudad del laboratorio</span>
+        <input type="text" value="{{laboratorio.ciudad}}" class="form-control" aria-label="Sizing example input" style='width:60%' aria-describedby="inputGroup-sizing-default" name="lab_ciudad">
+      </div>
+      <div class="input-group mb-3 mx-auto" style='width:33%'>
+        <span class="input-group-text" id="inputGroup-sizing-default" style='width:40%'>Pais del laboratorio</span>
+        <input type="text" value="{{laboratorio.pais}}" class="form-control" aria-label="Sizing example input" style='width:60%' aria-describedby="inputGroup-sizing-default" name="lab_pais">
+      </div>
+      <div class="mx-auto my-4" style='width:10%'>
+        <input type="submit" class="btn btn-success" style="background-color: #c76fd5;border-color:#c76fd5" value="Ingresar producto">
+          </div>
+</form>
+{% endblock body %}
